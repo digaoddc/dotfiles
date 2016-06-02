@@ -9,6 +9,8 @@ filetype indent on
 " Turn on syntax highlighting
 syntax on
 
+set number
+
 " Indent settings
 set shiftwidth=2
 set softtabstop=2
@@ -17,6 +19,20 @@ set autoindent
 
 " =============== Plugins configurations ===================
 nmap <silent> <Leader>p :NERDTreeToggle<CR>
+
+" fugitive.vim
+" "
+" ---------------------------------------------------------------------------------------------------------------------
+"
+"  " open an interactive vertical split with git blame
+"  nnoremap <silent> <leader>gb :Gblame<CR>
+"
+"  " open the output of git diff
+"  nnoremap <silent> <leader>gd :Gdiff<CR>
+"
+"  " open the output of git status
+"  nnoremap <silent> <leader>gs :Gstatus<CR>
+"
 " ==========================================================
 
 " set the runtime path to include Vundle and initialize
@@ -27,31 +43,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" ### Plugin 'L9'
-" Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
-
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'valloric/youcompleteme'
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
