@@ -54,6 +54,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/AutoTag'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-endwise'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
