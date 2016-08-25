@@ -9,3 +9,11 @@ alias mysql-stop="mysql.server stop"
 alias gc="git clean -d -f"
 alias gs="git status"
 alias tailtest="tail -f log/development.log"
+alias lw="cd devel/"
+alias rc="rails c"
+alias bi="bundle install"
+alias gd="git diff"
+alias gpo="git push origin $(git rev-parse --abbrev-ref HEAD)"
+
+# Squash
+#git rebase -i HEAD~3
