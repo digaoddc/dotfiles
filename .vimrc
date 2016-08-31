@@ -44,7 +44,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ruby/vim-ruby'
@@ -52,10 +52,11 @@ Plugin 'tpope/vim-rails'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/AutoTag'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-endwise'
 Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
