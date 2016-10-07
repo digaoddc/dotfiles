@@ -1,0 +1,13 @@
+[push]
+  default = current
+[user]
+  name = Rodrigo Coutinho
+  email = rodrigo@test.com
+[core]
+  editor = /usr/bin/vim
+[merge]
+    ff = no
+    commit = no
+[pull]
+    rebase = true
+  default = current
