@@ -10,14 +10,21 @@ nmap <silent> <Leader>p :NERDTreeToggle<CR>
 " ---------------------------------------------------------------------------------------------------------------------
 "
 "  " open an interactive vertical split with git blame
-"  nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
 "
 "  " open the output of git diff
-"  nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
 "
 "  " open the output of git status
-"  nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
 "
+
+
+" Quickly open/reload vim
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
+nnoremap <silent> df :Ag "<cword>" <CR>
 
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v\c(node_modules|_build|deps|vendor|\.git|\.svn)$',
@@ -50,6 +57,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'craigemery/vim-autotag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
