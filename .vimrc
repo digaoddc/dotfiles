@@ -25,6 +25,15 @@ nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 nnoremap <silent> df :Ag "<cword>" <CR>
+"nnoremap <leader>. :CtrlPTag<cr>
+let g:airline#extensions#tabline#enabled = 1
+
+set hidden
+nmap <leader>T :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
 
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v\c(node_modules|_build|deps|vendor|\.git|\.svn)$',
@@ -42,7 +51,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ruby/vim-ruby'
