@@ -28,12 +28,17 @@ nnoremap <silent> df :Ag "<cword>" <CR>
 "nnoremap <leader>. :CtrlPTag<cr>
 let g:airline#extensions#tabline#enabled = 1
 
+" Buffer mappings
 set hidden
 nmap <leader>T :enew<cr>
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
+
+
+" Make copy commands work with SO clipboard
+set clipboard=unnamed
 
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v\c(node_modules|_build|deps|vendor|\.git|\.svn)$',
