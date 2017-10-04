@@ -69,8 +69,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'slashmili/alchemist.vim'
 Plugin 'craigemery/vim-autotag'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
