@@ -20,6 +20,13 @@ nnoremap <silent> <leader>gs :Gstatus<CR>
 "
 
 
+" EasyMotion
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -71,6 +78,7 @@ Plugin 'ervandew/supertab'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'craigemery/vim-autotag'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
