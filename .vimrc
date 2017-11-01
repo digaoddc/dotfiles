@@ -27,11 +27,14 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 
+nnoremap <Leader>a :Ack!<Space>
+
+
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-nnoremap <silent> df :Ag "<cword>" <CR>
+nnoremap <silent> df :Ack "<cword>" <CR>
 "nnoremap <leader>. :CtrlPTag<cr>
 let g:airline#extensions#tabline#enabled = 1
 
@@ -69,7 +72,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-endwise'
 Plugin 'honza/vim-snippets'
