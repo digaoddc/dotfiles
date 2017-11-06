@@ -81,5 +81,6 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rc="bundle exec rails c"
 export PATH="$HOME/.rbenv/bin:$PATH"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(rbenv init -)"
