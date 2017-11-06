@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off
 
+" Only for lw
+"let mapleader = "["
 
 " =============== Plugins configurations ===================
 nmap <silent> <Leader>p :NERDTreeToggle<CR>
@@ -33,6 +35,10 @@ nnoremap <Leader>a :Ack!<Space>
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+
+" Open orgmode file
+nnoremap <leader>o :e ~/Dropbox/LocawebFiles/main.org<CR>
 
 nnoremap <silent> df :Ack "<cword>" <CR>
 "nnoremap <leader>. :CtrlPTag<cr>
@@ -82,6 +88,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'craigemery/vim-autotag'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'jceb/vim-orgmode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
