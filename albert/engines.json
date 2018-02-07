@@ -1,0 +1,38 @@
+[
+    {
+        "iconPath": ":google",
+        "name": "Google",
+        "trigger": "gg ",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "iconPath": ":youtube",
+        "name": "Youtube",
+        "trigger": "yt ",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    },
+    {
+        "iconPath": ":github",
+        "name": "GitHub",
+        "trigger": "gh ",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    },
+    {
+        "iconPath": ":wikipedia",
+        "name": "Wikipedia",
+        "trigger": "wiki ",
+        "url": "https://en.wikipedia.org/w/index.php?search=%s"
+    },
+    {
+        "iconPath": ":duckduckgo",
+        "name": "DuckDuckGo",
+        "trigger": "dd ",
+        "url": "https://duckduckgo.com/?q=%s"
+    },
+    {
+        "iconPath": "/home/digao/.config/albert/org.albert.extension.websearch/{8fb964c9-9c4c-48ec-a12d-23c226df62bc}.",
+        "name": "Code",
+        "trigger": "lw ",
+        "url": "https://code.locaweb.com.br/?search=%s"
+    }
+]
