@@ -326,11 +326,13 @@ you should place your code here."
     :config (setq dumb-jump-selector 'helm)
     :ensure)
 
+
   ;; Web layer configuration
   (setq-default
 
    helm-ag-use-grep-ignore-list t
    grep-find-ignored-directories '("log")
+   helm-split-window-in-side-p t
 
    ;; js2-mode
    js2-basic-offset 2
