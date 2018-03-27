@@ -331,7 +331,7 @@ you should place your code here."
   (setq-default
 
    helm-ag-use-grep-ignore-list t
-   grep-find-ignored-directories '("log")
+   grep-find-ignored-directories '("log" "vendor" "tmp")
    helm-split-window-in-side-p t
 
    ;; js2-mode
