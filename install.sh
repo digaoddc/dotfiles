@@ -1,14 +1,17 @@
 #!/bin/bash
 
-echo "Starting installation"
-apt-get install -y git ack htop albert build-essential ruby-dev zlib1g-dev liblzma-dev redis-server libxml2 libxml2-dev tmux docker mysql-client mysql-server
-
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+echo "Copying configuration files"
+cp -rT configuration ~
+
+echo "Starting installation"
+# apt-get install -y git ack htop build-essential zlib1g-dev liblzma-dev redis-server libxml2 libxml2-dev tmux docker mysql-client mysql-server
+
 # Install docker
-# https://docs.docker.com/install/linux/docker-ee/ubuntu
+# https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 # Install asdf
 # https://github.com/asdf-vm/asdf
@@ -21,5 +24,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Install albert
 # https://albertlauncher.github.io/docs/installing/
+
+mkdir -p ~/.config/albert/
 cp albert/albert.conf ~/.config/albert/albert.conf
 cp albert/engines.json ~/.config/albert/org.albert.extension.websearch.json
