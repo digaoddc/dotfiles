@@ -334,6 +334,13 @@ you should place your code here."
    grep-find-ignored-directories '("log" "vendor" "tmp")
    helm-split-window-in-side-p t
 
+   (setq-default dotspacemacs-configuration-layers
+                 '((auto-completion :variables
+                                    auto-completion-enable-snippets-in-popup t)))
+
+   (setq yas-snippet-dirs '("~/devel/dotfiles/snippets"))
+   (yas-global-mode 1)
+
    ;; js2-mode
    js2-basic-offset 2
    js2-strict-trailing-comma-warning nil
@@ -347,3 +354,4 @@ you should place your code here."
 
   (global-set-key [f8] 'neotree-find-project-root)
   )
+

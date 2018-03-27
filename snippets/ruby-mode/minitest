@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: minitest
+# key: minitest
+# --
+require_relative '../test_helper'
+require 'minitest/autorun'
+
+class TestMyclass < ActiveSupport::TestCase
+  def setup
+    $0
+  end
+
+  def test_it_does_something
+
+    assert_equal(foo, bar)
+  end
+end

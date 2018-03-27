@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: rspec
+# key: rspec
+# --
+require 'spec_helper'
+
+describe Myclass do
+  let(:foo) { create :foo }
+  let(:model) { described_class.new }
+
+  describe "$0#mymethod" do
+    subject(:mymethod) { model.mymethod }
+
+    it { expect(mymethod).to eq 'anything' }
+  end
+end
