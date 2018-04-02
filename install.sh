@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Install emacs daemon as systemd unit
+cp -r ~/devel/dotfiles/.config ~/
+systemctl enable emacs-daemon --user
+sudo cp emacs.desktop /usr/share/applications
+
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
