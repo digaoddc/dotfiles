@@ -1,5 +1,17 @@
 [
     {
+        "iconPath": "/home/rodrigo/.config/albert/org.albert.extension.websearch/{ef0cebd0-2b3e-4bac-9bc5-4dd344581548}.",
+        "name": "Jira Openstack",
+        "trigger": "jira",
+        "url": "https://locaweb.atlassian.net/secure/RapidBoard.jspa?rapidView=181&amp;amp;projectKey=CLOUDOS"
+    },
+    {
+        "iconPath": "/home/rodrigo/.config/albert/org.albert.extension.websearch/{02c55bc1-7812-44b7-bd52-d1b4fe65d39d}.",
+        "name": "CI locaweb",
+        "trigger": "ci",
+        "url": "http://ci.qaservices.locaweb.com.br/job/iaas_iaas/job/iaas_qa/"
+    },
+    {
         "iconPath": ":google",
         "name": "Google",
         "trigger": "gg ",
