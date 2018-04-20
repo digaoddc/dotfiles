@@ -326,6 +326,7 @@ you should place your code here."
     :config (setq dumb-jump-selector 'helm)
     :ensure)
 
+  (setq ruby-insert-encoding-magic-comment nil)
 
   ;; Web layer configuration
   (setq-default
