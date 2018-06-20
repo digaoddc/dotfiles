@@ -45,6 +45,7 @@ values."
      react
      helm
      auto-completion
+     shell
      ;; better-defaults
      emacs-lisp
      git
@@ -338,6 +339,12 @@ you should place your code here."
    (setq-default dotspacemacs-configuration-layers
                  '((auto-completion :variables
                                     auto-completion-enable-snippets-in-popup t)))
+
+   (shell :variables
+          shell-default-shell 'multi-term
+          shell-default-height 70
+          shell-default-position 'bottom)
+
 
    (setq yas-snippet-dirs '("~/devel/dotfiles/snippets"))
    (yas-global-mode 1)
