@@ -46,6 +46,7 @@ values."
      helm
      auto-completion
      shell
+     spotify
      ;; better-defaults
      emacs-lisp
      git
@@ -362,4 +363,3 @@ you should place your code here."
 
   (global-set-key [f8] 'neotree-find-project-root)
   )
-
