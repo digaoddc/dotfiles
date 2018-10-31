@@ -5,9 +5,11 @@
   email = rodrigo.coutinho15@gmail.com
 [core]
   editor = /usr/bin/vim
-[merge]
-    ff = no
-    commit = no
 [pull]
-    rebase = true
+  rebase = true
   default = current
+[alias]
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  dump = cat-file -p
+  type = cat-file -t
+  ref = show-ref
