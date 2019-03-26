@@ -334,7 +334,7 @@ you should place your code here."
   (setq-default
 
    helm-ag-use-grep-ignore-list t
-   grep-find-ignored-directories '("log" "vendor" "tmp" "node_modules")
+   grep-find-ignored-directories '("log" "vendor" "tmp" "node_modules" "public")
    helm-split-window-in-side-p t
 
    (setq-default dotspacemacs-configuration-layers
