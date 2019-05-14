@@ -330,9 +330,28 @@ you should place your code here."
 
   (setq ruby-insert-encoding-magic-comment nil)
 
-  ;; Web layer configuration
-  (setq-default
+  ;; html layer
+  (defun my/web-mode-hooks ()
+    (setq web-mode-markup-indent-offset 2
+          web-mode-css-indent-offset 2
+          web-mode-code-indent-offset 2
+          web-mode-html-offset 2))
+  (add-hook 'web-mode-hook 'my/web-mode-hooks)
 
+  ;; CSS
+  (defun my/scss-mode-hooks ()
+    (setq css-indent-offset 2))
+  (add-hook 'css-mode-hook 'my/scss-mode-hooks)
+
+  ;; JavaScript
+  (use-package js2-mode
+    :config
+    (setq-default js2-basic-offset 2)
+    (setq-default js2-strict-trailing-comma-warning nil)
+    (setq-default js2-strict-missing-semi-warning nil)
+    (setq-default js-indent-level 2))
+
+  (setq-default
    helm-ag-use-grep-ignore-list t
    grep-find-ignored-directories '("log" "vendor" "tmp" "node_modules" "public")
    helm-split-window-in-side-p t
@@ -349,17 +368,7 @@ you should place your code here."
 
    (setq yas-snippet-dirs '("~/devel/dotfiles/snippets"))
    (yas-global-mode 1)
-
-   ;; js2-mode
-   js2-basic-offset 2
-   js2-strict-trailing-comma-warning nil
-   js2-strict-missing-semi-warning nil
-   ;; web-mode
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
+   )
 
   (global-set-key [f8] 'neotree-find-project-root)
   )
