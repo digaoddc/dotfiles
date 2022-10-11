@@ -73,3 +73,9 @@ echo "Installing Albert"
 #mkdir -p ~/.config/albert/
 #cp albert/albert.conf ~/.config/albert/albert.conf
 #cp albert/websearch.json ~/.config/albert/org.albert.extension.websearch.json
+
+echo "Installing openforti VPN"
+# https://github.com/nvbn/thefuck
+if ! command_exists openfortivpn ; then
+  yay -S openfortivpn
+fi
