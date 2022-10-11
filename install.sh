@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e -o pipefail
 
 command_exists () {
   type "$1" &> /dev/null ;
@@ -8,16 +9,22 @@ echo "Copying configuration files"
 cp -rT configuration ~
 
 
+echo "Install yay"
+if ! command_exists yay; then
+  sudo pacman -Sy
+  sudo pacman -Fy # sync packages
+  sudo pacman -S yay
+fi
+
 echo "Install default packages"
-if ! command_exists htop ; then
-  sudo apt-get update
-  sudo apt-get install -y ack htop build-essential zlib1g-dev liblzma-dev libxml2 libxml2-dev tmux curl wget emacs vim
+if ! command_exists emacs; then
+  # sudo apt-get install -y ack htop build-essential zlib1g-dev liblzma-dev libxml2 libxml2-dev tmux curl wget emacs vim
+  yay -S google-chrome ack vim tmux curl wget emacs
 fi
 
 echo "Installing zsh"
 if ! command_exists zsh ; then
-  sudo apt-get install zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   chsh -s /bin/zsh
 fi
 
@@ -38,8 +45,7 @@ if [ ! -d ~/.vim ]; then
 fi
 
 echo "Installing Docker"
-# https://docs.docker.com/install/linux/docker-ce/ubuntu/
-sudo apt-get install docker.io docker-compose
+sudo pacman -S docker docker-compose
 
 # Install emacs daemon as systemd unit
 #cp -r ~/devel/dotfiles/.config ~/
@@ -51,18 +57,19 @@ sudo apt-get install docker.io docker-compose
 
 # Install rbenv
 # https://github.com/rbenv/rbenv
+if ! command_exists rbenv ; then
+  yay -S rbenv
+fi
 
 echo "Installing thefuck"
 # https://github.com/nvbn/thefuck
 if ! command_exists fuck ; then
-  sudo apt install python3-dev python3-pip
-  sudo pip3 install thefuck
+  sudo pacman -S thefuck
 fi
 
 
 echo "Installing Albert"
-# https://albertlauncher.github.io/docs/installing/
-# https://www.ubuntuupdates.org/package/webupd8/artful/main/base/albert
-mkdir -p ~/.config/albert/
-cp albert/albert.conf ~/.config/albert/albert.conf
-cp albert/websearch.json ~/.config/albert/org.albert.extension.websearch.json
+# https://albertlauncher.github.io/installing/
+#mkdir -p ~/.config/albert/
+#cp albert/albert.conf ~/.config/albert/albert.conf
+#cp albert/websearch.json ~/.config/albert/org.albert.extension.websearch.json
