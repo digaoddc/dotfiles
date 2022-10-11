@@ -9,43 +9,46 @@ echo "Copying configuration files"
 cp -rT configuration ~
 
 
-echo "Install yay"
 if ! command_exists yay; then
+  echo "Install yay"
   sudo pacman -Sy
   sudo pacman -Fy # sync packages
   sudo pacman -S yay
 fi
 
-echo "Install default packages"
 if ! command_exists emacs; then
-  # sudo apt-get install -y ack htop build-essential zlib1g-dev liblzma-dev libxml2 libxml2-dev tmux curl wget emacs vim
+  echo "Install default packages"
   yay -S google-chrome ack vim tmux curl wget emacs
 fi
 
-echo "Installing zsh"
 if ! command_exists zsh ; then
+  echo "Installing zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   chsh -s /bin/zsh
 fi
 
-echo "Installing fzf"
 if [ ! -d ~/.fzf ]; then
+  echo "Installing fzf"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 fi
 
-echo "Installing Spacemacs"
 if [ ! -d ~/.emacs.d ]; then
+  echo "Installing Spacemacs"
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
-echo "Installing Vundle"
 if [ ! -d ~/.vim ]; then
+  echo "Installing Vundle"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-echo "Installing Docker"
-sudo pacman -S docker docker-compose
+
+if ! command_exists docker; then
+    echo "Installing Docker"
+    sudo pacman -S docker docker-compose
+fi
+
 
 # Install emacs daemon as systemd unit
 #cp -r ~/devel/dotfiles/.config ~/
@@ -58,24 +61,37 @@ sudo pacman -S docker docker-compose
 # Install rbenv
 # https://github.com/rbenv/rbenv
 if ! command_exists rbenv ; then
+ echo "Installing rbenv"
   yay -S rbenv
 fi
 
-echo "Installing thefuck"
-# https://github.com/nvbn/thefuck
 if ! command_exists fuck ; then
+  echo "Installing thefuck"
+  # https://github.com/nvbn/thefuck
   sudo pacman -S thefuck
 fi
 
 
-echo "Installing Albert"
+# echo "Installing Albert"
 # https://albertlauncher.github.io/installing/
 #mkdir -p ~/.config/albert/
 #cp albert/albert.conf ~/.config/albert/albert.conf
 #cp albert/websearch.json ~/.config/albert/org.albert.extension.websearch.json
 
-echo "Installing openforti VPN"
-# https://github.com/nvbn/thefuck
 if ! command_exists openfortivpn ; then
+  echo "Installing openforti VPN"
   yay -S openfortivpn
 fi
+
+# Install zoom
+# https://zoom.us/download?os=linux
+
+if ! command_exists openfortivpn ; then
+  echo "Install flatplak"
+  pamac install flatpak libpamac-flatpak-plugin
+fi
+
+# if ! command_exists spotify; then
+#   echo "Install spotify"
+#   flatpak install spotify
+# fi
