@@ -72,11 +72,13 @@ if ! command_exists fuck ; then
 fi
 
 
-# echo "Installing Albert"
-# https://albertlauncher.github.io/installing/
-#mkdir -p ~/.config/albert/
-#cp albert/albert.conf ~/.config/albert/albert.conf
-#cp albert/websearch.json ~/.config/albert/org.albert.extension.websearch.json
+if ! command_exists openfortivpn ; then
+  # https://albertlauncher.github.io/installing/
+  echo "Installing Albert"
+  mkdir -p ~/.config/albert/
+  yay -S albert
+  cp albert/albert.conf ~/.config/albert/albert.conf
+fi
 
 if ! command_exists openfortivpn ; then
   echo "Installing openforti VPN"
