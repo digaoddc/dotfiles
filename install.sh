@@ -93,6 +93,11 @@ if ! command_exists openfortivpn ; then
   pamac install flatpak libpamac-flatpak-plugin
 fi
 
+if ! command_exists code; then
+  echo "Install VSCode"
+  pamac install code
+fi
+
 # if ! command_exists spotify; then
 #   echo "Install spotify"
 #   flatpak install spotify
