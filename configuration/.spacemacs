@@ -591,16 +591,19 @@ before packages are loaded."
 
 ;; JavaScript
 (use-package js2-mode
-  :config
-  (setq-default js2-basic-offset 2)
-  (setq-default js2-strict-trailing-comma-warning nil)
-  (setq-default js2-strict-missing-semi-warning nil)
-  (setq-default js-indent-level 2))
+:config
+(setq-default js2-basic-offset 2)
+(setq-default js2-strict-trailing-comma-warning nil)
+(setq-default js2-strict-missing-semi-warning nil)
+(setq-default js-indent-level 2)
+:ensure)
 
 
-;; Configure dump jump
-
-
+;; Configure go-to command with alt+g+j
+(use-package xref
+:bind ("M-g j" . xref-find-definitions)
+:config (setq xref 'helm)
+:ensure)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
