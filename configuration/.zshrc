@@ -103,3 +103,8 @@ export EDITOR='vim'
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval $(thefuck --alias)
+
+eval "$(rbenv init - zsh)"
+
+# always start the shell with tmux
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session;}
