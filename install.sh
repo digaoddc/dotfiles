@@ -8,6 +8,9 @@ command_exists () {
 echo "Copying configuration files"
 cp -rT configuration ~
 
+echo "Copy visual studio code settings"
+cp code/* ~/.config/Code\ -\ OSS/User
+
 
 if ! command_exists yay; then
   echo "Install yay"
