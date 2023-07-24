@@ -29,7 +29,7 @@ fi
 
 if ! command_exists ack; then
   echo "Install default packages"
-  yay -S google-chrome ack vim tmux curl wget docker docker-compose
+  yay -S google-chrome ack vim tmux curl wget
 fi
 
 if ! command_exists zsh ; then
@@ -53,9 +53,8 @@ fi
 
 if ! command_exists docker; then
     echo "Installing Docker"
-    sudo yay -S docker
+    sudo yay -S docker docker-compose
 fi
-
 
 # Install rbenv
 # https://github.com/rbenv/rbenv
