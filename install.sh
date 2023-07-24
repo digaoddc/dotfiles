@@ -5,12 +5,15 @@ command_exists () {
   type "$1" &> /dev/null ;
 }
 
+mkdir -p ~/devel
+
+git clone https://github.com/digaoddc/dotfiles.git ~/devel
+
 echo "Copying configuration files"
 cp -rT configuration ~
 
 echo "Copy visual studio code settings"
 cp code/* ~/.config/Code\ -\ OSS/User
-
 
 if ! command_exists yay; then
   echo "Install yay"
@@ -19,9 +22,14 @@ if ! command_exists yay; then
   sudo pacman -S yay
 fi
 
-if ! command_exists emacs; then
+if ! command_exists code; then
+  echo "Install VSCode"
+  yay -S code
+fi
+
+if ! command_exists ack; then
   echo "Install default packages"
-  yay -S google-chrome ack vim tmux curl wget emacs
+  yay -S google-chrome ack vim tmux curl wget docker docker-compose
 fi
 
 if ! command_exists zsh ; then
@@ -36,10 +44,6 @@ if [ ! -d ~/.fzf ]; then
   ~/.fzf/install
 fi
 
-if [ ! -d ~/.emacs.d ]; then
-  echo "Installing Spacemacs"
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-fi
 
 if [ ! -d ~/.vim ]; then
   echo "Installing Vundle"
@@ -49,17 +53,9 @@ fi
 
 if ! command_exists docker; then
     echo "Installing Docker"
-    sudo pacman -S docker docker-compose
+    sudo yay -S docker
 fi
 
-
-# Install emacs daemon as systemd unit
-#cp -r ~/devel/dotfiles/.config ~/
-#systemctl enable emacs-daemon --user
-#sudo cp emacs.desktop /usr/share/applications
-
-# Install asdf
-# https://github.com/asdf-vm/asdf
 
 # Install rbenv
 # https://github.com/rbenv/rbenv
@@ -71,7 +67,7 @@ fi
 if ! command_exists fuck ; then
   echo "Installing thefuck"
   # https://github.com/nvbn/thefuck
-  sudo pacman -S thefuck
+  sudo yay -S thefuck
 fi
 
 
@@ -91,17 +87,14 @@ fi
 # Install zoom
 # https://zoom.us/download?os=linux
 
-if ! command_exists openfortivpn ; then
-  echo "Install flatplak"
-  pamac install flatpak libpamac-flatpak-plugin
+if ! command_exists flatpak ; then
+  echo "Install flatpak"
+  yay -S flatpak libpamac-flatpak-plugin
 fi
 
-if ! command_exists code; then
-  echo "Install VSCode"
-  pamac install code
-fi
+flatpak install flathub org.telegram.desktop
 
-# if ! command_exists spotify; then
-#   echo "Install spotify"
-#   flatpak install spotify
-# fi
+if ! command_exists spotify; then
+  echo "Install spotify"
+  flatpak install spotify
+fi
