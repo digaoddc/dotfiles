@@ -97,3 +97,8 @@ if ! command_exists spotify; then
   echo "Install spotify"
   flatpak install spotify
 fi
+
+if ! command_exists session-manager-plugin; then
+  echo "Install AWS session manager plugin"
+  yay -S aws-session-manager-plugin
+fi
