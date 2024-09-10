@@ -105,3 +105,4 @@ fi
 
 flatpak install flathub com.sublimetext.three
 flatpak install flathub io.dbeaver.DBeaverCommunity
+yay -S brave-bin
