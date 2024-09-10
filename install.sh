@@ -102,3 +102,6 @@ if ! command_exists session-manager-plugin; then
   echo "Install AWS session manager plugin"
   yay -S aws-session-manager-plugin
 fi
+
+flatpak install flathub com.sublimetext.three
+flatpak install flathub io.dbeaver.DBeaverCommunity
