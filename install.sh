@@ -22,6 +22,18 @@ if ! command_exists yay; then
   sudo pacman -S yay
 fi
 
+# Add fake-root, make and so on
+yay -S base-devel
+
+
+if ! command_exists hp-toolbox; then
+  yay -S manjaro-printer
+  sudo gpasswd -a digaoddc sys
+  yay -S hplip-plugin
+  # Setup printer with: $ hp-toolbox
+fi
+
+
 if ! command_exists code; then
   echo "Install VSCode"
   yay -S code
@@ -53,7 +65,7 @@ fi
 
 if ! command_exists docker; then
     echo "Installing Docker"
-    sudo yay -S docker docker-compose
+    sudo yay -S docker docker-compose docker-desktop
 fi
 
 # Install rbenv
@@ -61,6 +73,9 @@ fi
 if ! command_exists rbenv ; then
  echo "Installing rbenv"
   yay -S rbenv
+  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  rbenv install 3.3.6
+  rbenv global 3.3.6
 fi
 
 if ! command_exists fuck ; then
@@ -88,7 +103,7 @@ fi
 
 if ! command_exists flatpak ; then
   echo "Install flatpak"
-  yay -S flatpak libpamac-flatpak-plugin
+  yay -S flatpak
 fi
 
 flatpak install flathub org.telegram.desktop
@@ -106,3 +121,18 @@ fi
 flatpak install flathub com.sublimetext.three
 flatpak install flathub io.dbeaver.DBeaverCommunity
 yay -S brave-bin
+
+
+# install mailspring
+yay -S snapd
+sudo systemctl enable --now snapd.socket
+sudo ln -s /var/lib/snapd/snap /snap
+
+sudo snap install mailspring
+flatpak install flathub org.mozilla.Thunderbird
+
+
+# AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
