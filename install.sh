@@ -136,3 +136,8 @@ flatpak install flathub org.mozilla.Thunderbird
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+
+
+# https://wiki.manjaro.org/index.php/VirtualBox
+# mhwd-kernel -li # Get the current kernel to install the matching vb-host-modules
+yay -S virtualbox linux610-virtualbox-host-modules
