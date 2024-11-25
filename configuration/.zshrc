@@ -108,3 +108,5 @@ eval "$(rbenv init - zsh)"
 
 # always start the shell with tmux
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session;}
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

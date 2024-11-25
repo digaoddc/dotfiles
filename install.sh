@@ -140,4 +140,12 @@ sudo ./aws/install
 
 # https://wiki.manjaro.org/index.php/VirtualBox
 # mhwd-kernel -li # Get the current kernel to install the matching vb-host-modules
+# Disable the hardware virtualization
 yay -S virtualbox linux610-virtualbox-host-modules
+
+
+# Create a ssh-agent daemon
+mkdir -p ~/.config/systemd/user
+cp system/user/ssh-agent.service  ~/.config/systemd/user/ssh-agent.service
+systemctl --user enable ssh-agent
+systemctl --user start ssh-agent
