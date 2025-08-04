@@ -74,8 +74,8 @@ if ! command_exists rbenv ; then
  echo "Installing rbenv"
   yay -S rbenv
   git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-  rbenv install 3.3.6
-  rbenv global 3.3.6
+  rbenv install 3.4.5
+  rbenv global 3.4.5
 fi
 
 if ! command_exists fuck ; then
@@ -136,6 +136,7 @@ flatpak install flathub org.mozilla.Thunderbird
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+yay -S kubectl
 
 
 # https://wiki.manjaro.org/index.php/VirtualBox
