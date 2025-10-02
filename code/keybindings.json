@@ -117,5 +117,10 @@
 		"key": "ctrl+l",
 		"command": "file-browser.stepIn",
 		"when": "inFileBrowser"
-	}
+	},
+	{
+        "key": "tab",
+        "command": "magit.toggle-fold",
+        "when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+    }
 ]
