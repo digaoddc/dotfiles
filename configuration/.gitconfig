@@ -1,8 +1,8 @@
 [push]
   default = current
 [user]
-  name = Rodrigo Coutinho
-  email = rodrigo.coutinho15@gmail.com
+  name = Name
+  email = myemail.com
 [core]
   editor = /usr/bin/vim
 [pull]
