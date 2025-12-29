@@ -1,3 +1,9 @@
-Host *
-  AddKeysToAgent yes
+ControlMaster auto
+ControlPersist yes
+ServerAliveInterval 60
+TCPKeepAlive yes
+ControlPath ~/.ssh/%r@%h:%p.sock
+AddKeysToAgent confirm
+
+Host github.com
   IdentityFile ~/.ssh/mykey
