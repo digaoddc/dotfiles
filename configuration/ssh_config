@@ -1,9 +1,9 @@
 ControlMaster auto
-ControlPersist yes
 ServerAliveInterval 60
 TCPKeepAlive yes
 ControlPath ~/.ssh/%r@%h:%p.sock
-AddKeysToAgent confirm
+AddKeysToAgent yes # docker/yubikey setup
+ControlPersist 720m
 
 Host github.com
   IdentityFile ~/.ssh/mykey
