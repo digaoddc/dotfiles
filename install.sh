@@ -57,6 +57,11 @@ if [ ! -d ~/.fzf ]; then
 fi
 
 
+if ! command_exists github-cli; then
+  echo "Installing Github CLI"
+  yay -S github-cli
+fi
+
 if [ ! -d ~/.vim ]; then
   echo "Installing Vundle"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -65,7 +70,7 @@ fi
 
 if ! command_exists docker; then
     echo "Installing Docker"
-    sudo yay -S docker docker-compose docker-desktop
+    sudo yay -S docker docker-compose docker-buildx
 fi
 
 # Install rbenv
