@@ -15,6 +15,9 @@ cp -rT configuration ~
 echo "Copy visual studio code settings"
 cp code/* ~/.config/Code\ -\ OSS/User
 
+echo "Copy ssh config file"
+cp ssh/config ~/.ssh/config
+
 if ! command_exists yay; then
   echo "Install yay"
   sudo pacman -Sy
@@ -79,8 +82,8 @@ if ! command_exists rbenv ; then
  echo "Installing rbenv"
   yay -S rbenv
   git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-  rbenv install 3.4.5
-  rbenv global 3.4.5
+  rbenv install 4.0.3
+  rbenv global 4.0.3
 fi
 
 if ! command_exists fuck ; then
@@ -98,10 +101,10 @@ if ! command_exists openfortivpn ; then
   cp albert/albert.conf ~/.config/albert/albert.conf
 fi
 
-if ! command_exists openfortivpn ; then
-  echo "Installing openforti VPN"
-  yay -S openfortivpn
-fi
+#if ! command_exists openfortivpn ; then
+#  echo "Installing openforti VPN"
+#  yay -S openfortivpn
+#fi
 
 # Install zoom
 # https://zoom.us/download?os=linux
@@ -151,8 +154,8 @@ yay -S virtualbox linux615-virtualbox-host-modules
 
 
 # Create a ssh-agent daemon
-mkdir -p ~/.config/systemd/user
-cp system/user/ssh-agent.service  ~/.config/systemd/user/ssh-agent.service
-systemctl --user enable ssh-agent
-systemctl --user start ssh-agent
+#mkdir -p ~/.config/systemd/user
+#cp system/user/ssh-agent.service  ~/.config/systemd/user/ssh-agent.service
+#systemctl --user enable ssh-agent
+#systemctl --user start ssh-agent
 

@@ -1,0 +1,10 @@
+ControlMaster auto
+ServerAliveInterval 60
+TCPKeepAlive yes
+ControlPath ~/.ssh/%r@%h:%p.sock
+AddKeysToAgent yes # works in docker
+ControlPersist 720m
+
+Host github.com
+  IdentityFile ~/.ssh/yubi
+

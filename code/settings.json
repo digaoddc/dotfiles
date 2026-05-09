@@ -53,7 +53,7 @@
         "editor.tabSize": 2
     },
     "[ruby]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
     },
     "[css]": {
         "editor.tabSize": 2
@@ -61,5 +61,6 @@
     "[python]": {
         "editor.tabSize": 4
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Dark Modern",
 }
