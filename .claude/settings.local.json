@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "Read"
+    ],
+    "deny": [
+      "Bash(git push*)",
+      "Bash(git commit*)",
+      "Bash(git merge*)",
+      "Bash(git rebase*)",
+      "Bash(git reset*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git restore*)",
+      "Bash(git add*)",
+      "Bash(git rm*)",
+      "Bash(git stash*)",
+      "Bash(git cherry-pick*)",
+      "Bash(git revert*)",
+      "Bash(git apply*)",
+      "Bash(git am*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)",
+      "Bash(git clean*)",
+      "Bash(git tag*)"
+    ]
+  }
+}
