@@ -1,9 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Check the size of docker volumes"
-
-for d in `docker ps | awk '{print $1}' | tail -n +2`; do
+for d in `docker ps -a | awk '{print $1}' | tail -n +2`; do
     d_name=`docker inspect -f {{.Name}} $d`
     echo "========================================================="
     echo "$d_name ($d) volumes:"
