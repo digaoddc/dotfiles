@@ -73,7 +73,11 @@ fi
 
 if ! command_exists docker; then
     echo "Installing Docker"
-    sudo yay -S docker docker-compose docker-buildx
+    sudo yay -S docker docker-compose docker-buildx docker-rootless-extras
+    echo "Enable docker rootless"
+    systemctl --user enable --now docker.socket
+    docker context create rootless --docker "host=unix://$XDG_RUNTIME_DIR/docker.sock"
+    docker context use rootless
 fi
 
 # Install rbenv
